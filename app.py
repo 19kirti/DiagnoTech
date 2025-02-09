@@ -871,7 +871,7 @@ if selected == 'Kidney Health Check':
 
 
 # Breast Cancer Prediction Page
-if selected == 'Breast Cancer Detection':
+if selected == '🎗 Breast Cancer Detection':
     st.title("Breast Cancer Prediction")
     name = st.text_input("Name:")
     # Columns
