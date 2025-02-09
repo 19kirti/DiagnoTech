@@ -104,7 +104,7 @@ if selected == '🏠 Home':
     disease_model.load_xgboost('model/xgboost_model.json')
 
     # Title
-    st.write('#Overall Diseases Detection using Machine Learning')
+    st.write('# Overall Diseases Detection using Machine Learning')
 
     symptoms = st.multiselect('What are your symptoms?', options=disease_model.all_symptoms)
 
@@ -137,7 +137,7 @@ if selected == '🧪 Disease Detection':
     disease_model.load_xgboost('model/xgboost_model.json')
 
     # Title
-    st.write('#Overall Diseases Detection using Machine Learning')
+    st.write('# Overall Diseases Detection using Machine Learning')
 
     symptoms = st.multiselect('What are your symptoms?', options=disease_model.all_symptoms)
 
