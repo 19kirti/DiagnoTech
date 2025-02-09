@@ -57,26 +57,26 @@ lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
 
 # sidebar
 with st.sidebar:
-    st.image('logo.png', width=200)
-    st.title("🔬 Smart Health Diagnostics")
+    st.image('healthlogo.jpg', width=200)
+    st.title("Your health guard on your fingertips!")
     st.markdown("---")
     
-    selected = option_menu('Your Health, Your Priority! 🏥', [
-        '🏠 Home',
-        '🧪 Disease Detection',
-        '🩸 Diabetes Detection',
-        '❤️ Heart Disease Diagnosis',
-        '🧠 Parkinson’s Risk Evaluation',
-        '🩺 Liver Health Check',
-        '🦠 Hepatitis Risk Check',
-        '🫁 Lung Cancer Detection',
-        '🩹 Kidney Health Check',
+    selected = option_menu('Smart Health Diagnostics', [
+        'Home',
+        'Disease Detection',
+        'Diabetes Detection',
+        'Heart Disease Diagnosis',
+        'Parkinson’s Risk Evaluation',
+        'Liver Health Check',
+        'Hepatitis Risk Check',
+        'Lung Cancer Detection',
+        'Kidney Health Check',
         '🎗 Breast Cancer Detection',
-        '📊 Health Analytics',
-        '💡 Preventive Tips',
-        '📞 Contact a Specialist'
+        'Health Analytics',
+        'Preventive Tips',
+        'Contact a Specialist'
     ],
-    icons=['house', 'stethoscope', 'activity', 'heart', 'brain', 'clipboard-check', 'virus', 'lungs', 'droplet', 'ribbon', 'bar-chart', 'lightbulb', 'telephone'],
+    icons=['house', 'bar-chart', 'activity', 'heart', 'activity', 'clipboard-check', 'virus', 'lungs', 'droplet', 'ribbon', 'bar-chart', 'lightbulb', 'telephone'],
     default_index=0)
     
     st.markdown("---")
@@ -98,7 +98,7 @@ with st.sidebar:
 
 
 # home page is for overall heatlh risk assessment 
-if selected == '🏠 Home': 
+if selected == 'Home': 
     # Create disease class and load ML model
     disease_model = DiseaseModel()
     disease_model.load_xgboost('model/xgboost_model.json')
@@ -131,7 +131,7 @@ if selected == '🏠 Home':
 
 
 # overall diseases prediction page
-if selected == '🧪 Disease Detection': 
+if selected == 'Disease Detection': 
     # Create disease class and load ML model
     disease_model = DiseaseModel()
     disease_model.load_xgboost('model/xgboost_model.json')
