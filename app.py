@@ -63,38 +63,33 @@ with st.sidebar:
     
     selected = option_menu('Smart Health Diagnostics', [
         'Home',
-        'Disease Detection',
         'Diabetes Detection',
         'Heart Disease Diagnosis',
-        'Parkinson’s Risk Evaluation',
+        'Parkinsons Risk Evaluation',
         'Liver Health Check',
         'Hepatitis Risk Check',
         'Lung Cancer Detection',
         'Kidney Health Check',
         '🎗 Breast Cancer Detection',
-        'Health Analytics',
         'Preventive Tips',
         'Contact a Specialist'
     ],
-    icons=['house', 'bar-chart', 'activity', 'heart', 'activity', 'clipboard-check', 'virus', 'lungs', 'droplet', 'ribbon', 'bar-chart', 'lightbulb', 'telephone'],
+    icons=['house', 'activity', 'heart', 'activity', 'clipboard-check', 'virus', 'lungs', 'droplet', 'ribbon', 'lightbulb', 'telephone'],
     default_index=0)
     
-    st.markdown("---")
-    st.subheader("🩻 Quick Scan")
-    st.button("Start a Quick Health Assessment")
+    # st.markdown("---")
+    # st.subheader("🩻Quick Scan")
+    # st.button("Start a Quick Health Assessment")
     
     st.markdown("---")
-    st.subheader("📍 Locate Nearby Clinics")
+    st.subheader("📍Locate Nearby Clinics")
     st.text_input("Enter your location:")
     st.button("Find Clinics")
     
     st.markdown("---")
-    st.subheader("📞 Need Help?")
+    st.subheader("📞Need Help?")
     st.write("Call our 24/7 helpline: **+123 456 7890**")
-    st.write("📧 Email: support@smarthealth.com")
-
-
-
+    st.write("📧Email: support@smarthealth.com")
 
 
 # home page is for overall heatlh risk assessment 
@@ -130,44 +125,43 @@ if selected == 'Home':
 
 
 
-# overall diseases prediction page
-if selected == 'Disease Detection': 
-    # Create disease class and load ML model
-    disease_model = DiseaseModel()
-    disease_model.load_xgboost('model/xgboost_model.json')
+# # overall diseases prediction page
+# if selected == 'Disease Detection': 
+#     # Create disease class and load ML model
+#     disease_model = DiseaseModel()
+#     disease_model.load_xgboost('model/xgboost_model.json')
 
-    # Title
-    st.write('# Overall Diseases Detection using Machine Learning')
+#     # Title
+#     st.write('# Overall Diseases Detection using Machine Learning')
 
-    symptoms = st.multiselect('What are your symptoms?', options=disease_model.all_symptoms)
+#     symptoms = st.multiselect('What are your symptoms?', options=disease_model.all_symptoms)
 
-    X = prepare_symptoms_array(symptoms)
+#     X = prepare_symptoms_array(symptoms)
 
-    # Trigger XGBoost model
-    if st.button('Predict'): 
-        # Run the model with the python script
+#     # Trigger XGBoost model
+#     if st.button('Predict'): 
+#         # Run the model with the python script
         
-        prediction, prob = disease_model.predict(X)
-        st.write(f'## Disease: {prediction} with {prob*100:.2f}% probability')
+#         prediction, prob = disease_model.predict(X)
+#         st.write(f'## Disease: {prediction} with {prob*100:.2f}% probability')
 
 
-        tab1, tab2= st.tabs(["Description", "Precautions"])
+#         tab1, tab2= st.tabs(["Description", "Precautions"])
 
-        with tab1:
-            st.write(disease_model.describe_predicted_disease())
+#         with tab1:
+#             st.write(disease_model.describe_predicted_disease())
 
-        with tab2:
-            precautions = disease_model.predicted_disease_precautions()
-            for i in range(4):
-                st.write(f'{i+1}. {precautions[i]}')
-
+#         with tab2:
+#             precautions = disease_model.predicted_disease_precautions()
+#             for i in range(4):
+#                 st.write(f'{i+1}. {precautions[i]}')
 
 
 
 # Diabetes prediction page
 if selected == 'Diabetes Detection':  # pagetitle
     st.title("Diabetes Disease Prediction")
-    image = Image.open('d3.jpg')
+    image = Image.open('diabetes.jpg')
     st.image(image, caption='diabetes disease prediction')
     # columns
     # no inputs from the user
@@ -223,7 +217,7 @@ if selected == 'Diabetes Detection':  # pagetitle
 # Heart prediction page
 if selected == 'Heart Disease Diagnosis':
     st.title("Heart Disease Prediction")
-    image = Image.open('heart2.jpg')
+    image = Image.open('heart.jpg')
     st.image(image, caption='heart failuire')
     # age	sex	cp	trestbps	chol	fbs	restecg	thalach	exang	oldpeak	slope	ca	thal	target
     # columns
@@ -434,7 +428,7 @@ lung_cancer_data['GENDER'] = lung_cancer_data['GENDER'].map({'M': 'Male', 'F': '
 # Lung Cancer prediction page
 if selected == 'Lung Cancer Detection':
     st.title("Lung Cancer Prediction")
-    image = Image.open('h.png')
+    image = Image.open('lungs.jpg')
     st.image(image, caption='Lung Cancer Prediction')
 
     # Columns
@@ -532,7 +526,7 @@ if selected == 'Lung Cancer Detection':
 # Liver prediction page
 if selected == 'Liver Health Check':  # pagetitle
     st.title("Liver Disease Prediction")
-    image = Image.open('liver.jpg')
+    image = Image.open('liver.png')
     st.image(image, caption='Liver disease prediction.')
     # columns
     # no inputs from the user
@@ -595,7 +589,7 @@ if selected == 'Liver Health Check':  # pagetitle
 # Hepatitis prediction page
 if selected == 'Hepatitis Risk Check':
     st.title("Hepatitis Prediction")
-    image = Image.open('h.png')
+    image = Image.open('hepatitis.jpg')
     st.image(image, caption='Hepatitis Prediction')
 
     # Columns
@@ -750,6 +744,7 @@ import joblib
 # Chronic Kidney Disease Prediction Page
 if selected == 'Kidney Health Check':
     st.title("Kidney Disease Prediction")
+    image = Image.open('kidney.jpg')
     # Add the image for Chronic Kidney Disease prediction if needed
     name = st.text_input("Name:")
     # Columns
@@ -873,6 +868,7 @@ if selected == 'Kidney Health Check':
 # Breast Cancer Prediction Page
 if selected == '🎗 Breast Cancer Detection':
     st.title("Breast Cancer Prediction")
+    image = Image.open('breastcancer.jpg')
     name = st.text_input("Name:")
     # Columns
     # No inputs from the user
