@@ -58,7 +58,7 @@ lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
 # sidebar
 with st.sidebar:
     st.image('healthlogo.jpg', width=200)
-    st.title("Your health guard on your fingertips!")
+    st.title("Overall Diseases Detection using Machine Learning")
     st.markdown("---")
     
     selected = option_menu('Smart Health Diagnostics', [
@@ -99,7 +99,7 @@ if selected == 'Home':
     disease_model.load_xgboost('model/xgboost_model.json')
 
     # Title
-    st.write('# Overall Diseases Detection using Machine Learning')
+    st.write('# Your AI health companion on your finger tips!')
 
     symptoms = st.multiselect('What are your symptoms?', options=disease_model.all_symptoms)
 
