@@ -65,7 +65,7 @@ with st.sidebar:
         'Home',
         'Diabetes Detection',
         'Heart Disease Diagnosis',
-        'Parkinsons Risk Evaluation',
+        #'Parkinsons Risk Evaluation',
         'Liver Health Check',
         'Hepatitis Risk Check',
         'Lung Cancer Detection',
@@ -74,7 +74,7 @@ with st.sidebar:
         'Preventive Tips',
         'Contact a Specialist'
     ],
-    icons=['house', 'activity', 'heart', 'activity', 'clipboard-check', 'virus', 'lungs', 'droplet', 'ribbon', 'lightbulb', 'telephone'],
+    icons=['house', 'activity', 'heart', 'clipboard-check', 'virus', 'lungs', 'droplet', 'ribbon', 'lightbulb', 'telephone'],
     default_index=0)
     
     # st.markdown("---")
@@ -341,81 +341,81 @@ if selected == 'Heart Disease Diagnosis':
 
 
 
-if selected == 'Parkisons Risk Evaluation':
-    st.title("Parkisons Risk Prediction")
-    image = Image.open('p1.jpg')
-    st.image(image, caption='parkinsons disease')
-  # parameters
-#    name	MDVP:Fo(Hz)	MDVP:Fhi(Hz)	MDVP:Flo(Hz)	MDVP:Jitter(%)	MDVP:Jitter(Abs)	MDVP:RAP	MDVP:PPQ	Jitter:DDP	MDVP:Shimmer	MDVP:Shimmer(dB)	Shimmer:APQ3	Shimmer:APQ5	MDVP:APQ	Shimmer:DDA	NHR	HNR	status	RPDE	DFA	spread1	spread2	D2	PPE
-   # change the variables according to the dataset used in the model
-    name = st.text_input("Name:")
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        MDVP = st.number_input("MDVP:Fo(Hz)")
-    with col2:
-        MDVPFIZ = st.number_input("MDVP:Fhi(Hz)")
-    with col3:
-        MDVPFLO = st.number_input("MDVP:Flo(Hz)")
-    with col1:
-        MDVPJITTER = st.number_input("MDVP:Jitter(%)")
-    with col2:
-        MDVPJitterAbs = st.number_input("MDVP:Jitter(Abs)")
-    with col3:
-        MDVPRAP = st.number_input("MDVP:RAP")
+# if selected == 'Parkisons Risk Evaluation':
+#     st.title("Parkisons Risk Prediction")
+#     image = Image.open('p1.jpg')
+#     st.image(image, caption='parkinsons disease')
+#   # parameters
+# #    name	MDVP:Fo(Hz)	MDVP:Fhi(Hz)	MDVP:Flo(Hz)	MDVP:Jitter(%)	MDVP:Jitter(Abs)	MDVP:RAP	MDVP:PPQ	Jitter:DDP	MDVP:Shimmer	MDVP:Shimmer(dB)	Shimmer:APQ3	Shimmer:APQ5	MDVP:APQ	Shimmer:DDA	NHR	HNR	status	RPDE	DFA	spread1	spread2	D2	PPE
+#    # change the variables according to the dataset used in the model
+#     name = st.text_input("Name:")
+#     col1, col2, col3 = st.columns(3)
+#     with col1:
+#         MDVP = st.number_input("MDVP:Fo(Hz)")
+#     with col2:
+#         MDVPFIZ = st.number_input("MDVP:Fhi(Hz)")
+#     with col3:
+#         MDVPFLO = st.number_input("MDVP:Flo(Hz)")
+#     with col1:
+#         MDVPJITTER = st.number_input("MDVP:Jitter(%)")
+#     with col2:
+#         MDVPJitterAbs = st.number_input("MDVP:Jitter(Abs)")
+#     with col3:
+#         MDVPRAP = st.number_input("MDVP:RAP")
 
-    with col2:
+#     with col2:
 
-        MDVPPPQ = st.number_input("MDVP:PPQ ")
-    with col3:
-        JitterDDP = st.number_input("Jitter:DDP")
-    with col1:
-        MDVPShimmer = st.number_input("MDVP:Shimmer")
-    with col2:
-        MDVPShimmer_dB = st.number_input("MDVP:Shimmer(dB)")
-    with col3:
-        Shimmer_APQ3 = st.number_input("Shimmer:APQ3")
-    with col1:
-        ShimmerAPQ5 = st.number_input("Shimmer:APQ5")
-    with col2:
-        MDVP_APQ = st.number_input("MDVP:APQ")
-    with col3:
-        ShimmerDDA = st.number_input("Shimmer:DDA")
-    with col1:
-        NHR = st.number_input("NHR")
-    with col2:
-        HNR = st.number_input("HNR")
+#         MDVPPPQ = st.number_input("MDVP:PPQ ")
+#     with col3:
+#         JitterDDP = st.number_input("Jitter:DDP")
+#     with col1:
+#         MDVPShimmer = st.number_input("MDVP:Shimmer")
+#     with col2:
+#         MDVPShimmer_dB = st.number_input("MDVP:Shimmer(dB)")
+#     with col3:
+#         Shimmer_APQ3 = st.number_input("Shimmer:APQ3")
+#     with col1:
+#         ShimmerAPQ5 = st.number_input("Shimmer:APQ5")
+#     with col2:
+#         MDVP_APQ = st.number_input("MDVP:APQ")
+#     with col3:
+#         ShimmerDDA = st.number_input("Shimmer:DDA")
+#     with col1:
+#         NHR = st.number_input("NHR")
+#     with col2:
+#         HNR = st.number_input("HNR")
   
-    with col2:
-        RPDE = st.number_input("RPDE")
-    with col3:
-        DFA = st.number_input("DFA")
-    with col1:
-        spread1 = st.number_input("spread1")
-    with col1:
-        spread2 = st.number_input("spread2")
-    with col3:
-        D2 = st.number_input("D2")
-    with col1:
-        PPE = st.number_input("PPE")
+#     with col2:
+#         RPDE = st.number_input("RPDE")
+#     with col3:
+#         DFA = st.number_input("DFA")
+#     with col1:
+#         spread1 = st.number_input("spread1")
+#     with col1:
+#         spread2 = st.number_input("spread2")
+#     with col3:
+#         D2 = st.number_input("D2")
+#     with col1:
+#         PPE = st.number_input("PPE")
 
-    # code for prediction
-    parkinson_dig = ''
+#     # code for prediction
+#     parkinson_dig = ''
     
-    # button
-    if st.button("Parkinson test result"):
-        parkinson_prediction=[[]]
-        # change the parameters according to the model
-        parkinson_prediction = parkinson_model.predict([[MDVP, MDVPFIZ, MDVPFLO, MDVPJITTER, MDVPJitterAbs, MDVPRAP, MDVPPPQ, JitterDDP, MDVPShimmer,MDVPShimmer_dB, Shimmer_APQ3, ShimmerAPQ5, MDVP_APQ, ShimmerDDA, NHR, HNR,  RPDE, DFA, spread1, spread2, D2, PPE]])
+#     # button
+#     if st.button("Parkinson test result"):
+#         parkinson_prediction=[[]]
+#         # change the parameters according to the model
+#         parkinson_prediction = parkinson_model.predict([[MDVP, MDVPFIZ, MDVPFLO, MDVPJITTER, MDVPJitterAbs, MDVPRAP, MDVPPPQ, JitterDDP, MDVPShimmer,MDVPShimmer_dB, Shimmer_APQ3, ShimmerAPQ5, MDVP_APQ, ShimmerDDA, NHR, HNR,  RPDE, DFA, spread1, spread2, D2, PPE]])
 
-        if parkinson_prediction[0] == 1:
-            parkinson_dig = 'we are really sorry to say but it seems like you have Parkinson disease'
-            image = Image.open('positive.jpg')
-            st.image(image, caption='')
-        else:
-            parkinson_dig = "Congratulation , You don't have Parkinson disease"
-            image = Image.open('negative.jpg')
-            st.image(image, caption='')
-        st.success(name+' , ' + parkinson_dig)
+#         if parkinson_prediction[0] == 1:
+#             parkinson_dig = 'we are really sorry to say but it seems like you have Parkinson disease'
+#             image = Image.open('positive.jpg')
+#             st.image(image, caption='')
+#         else:
+#             parkinson_dig = "Congratulation , You don't have Parkinson disease"
+#             image = Image.open('negative.jpg')
+#             st.image(image, caption='')
+#         st.success(name+' , ' + parkinson_dig)
 
 
 
