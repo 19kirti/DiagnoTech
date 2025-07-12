@@ -4,6 +4,11 @@
 
 ---
 
+# 📸 Screenshots
+
+<img width="1796" height="871" alt="image" src="https://github.com/user-attachments/assets/de98a6e1-e800-4656-9116-df1c17f4da04" />
+
+
 ## 🚀 Features
 
 - 🔍 Predicts multiple diseases with **85–90% accuracy**
