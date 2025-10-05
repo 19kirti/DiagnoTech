@@ -64,6 +64,10 @@ Contributions, ideas, and feedback are welcome! Feel free to open an issue or su
 
 ---
 
+## 🏆 Acknowledgements
+
+Dataset inspired by heathcare and related datasets (e.g., on Kaggle)
+
 ## 📃 License
 
 This project is for educational purposes only.  
